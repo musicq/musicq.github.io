@@ -2,6 +2,10 @@
 layout: post
 title:  "如何使用 ionic 在真实设备上部署 app"
 date:   2017-07-07
+tag:
+    - ionic
+comments: true
+share: true
 ---
 
 > 本文所用的机器是 `iOS`，所以很可能并不适用于`android`。
@@ -207,7 +211,7 @@ export class DetailPage {
 ```
 
 **detail.html** 片段
-```xml
+```html
 <ion-content padding>
   <!-- 为详情页增加一些内容 -->
   <h3 text-center *ngIf="item">

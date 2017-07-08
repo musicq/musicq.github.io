@@ -2,7 +2,10 @@
 layout: post
 title:  "Mysql 数据乱码"
 date:   2015-10-16 16:41:03
-categories: jekyll update
+tag:
+    - mysql
+comments: true
+share: true
 ---
 
 这几天在学习 php 时遇到了各种坑，对于我这种新手小白来说，解决每一个问题都需要花上不少时间，真是挺悲哀的。。。不过算了，想起每当解决一个问题时那种长叹一口气时的感觉，也还是挺爽的。

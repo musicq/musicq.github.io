@@ -1,8 +1,14 @@
 ---
 layout: post
 title:  "CSS颜色混合模式"
-categories: jekyll update
+date: 2015-05-23
+comments: true
+share: true
+tags:
+  - css
+comments: true
 ---
+
 <style>
   .blend-mode{
     background: url({{site.imgurl}}2015-05-23/sakura.jpg) no-repeat center center rgba(56, 93, 110, 1);

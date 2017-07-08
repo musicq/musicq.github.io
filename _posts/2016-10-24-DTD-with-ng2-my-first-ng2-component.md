@@ -2,8 +2,13 @@
 layout: post
 title:  "《Angular2 从开发到部署系列》之「第一个 Angular2 应用」"
 date:   2016-10-20
+tag:
+    - Angular2
+comments: true
+share: true
 ---
-#前言
+
+# 前言
 > 抱歉隔了很久才更新。。。
 >
 > 在学习之前，我给大家推荐点学习资料

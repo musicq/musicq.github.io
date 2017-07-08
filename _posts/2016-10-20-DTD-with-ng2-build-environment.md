@@ -2,9 +2,13 @@
 layout: post
 title:  "《Angular2 从开发到部署系列》之「环境搭建」"
 date:   2016-10-20
+tag:
+    - Angular2
+comments: true
+share: true
 ---
 
-#环境搭建
+# 环境搭建
 
 > 如果你已经迫不及待想要跳过教程直接开始自己折腾了，[这里](https://github.com/musicq/angular2-webpack-express-starter)已经有一份现成的项目备份了。你可以运行下列命令立刻开始自己第一个 Angular2之旅。
 > ```shell

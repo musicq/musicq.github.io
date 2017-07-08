@@ -1,9 +1,15 @@
-<footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer">
-      <a href="https://github.com/{{ site.github_username }}"><i class="fa fa-github"></i>&nbsp;Fork me on the github</a>
-      &copy;&nbsp;2015&nbsp;
-      <a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i></a>
-    </div>
+<div class="footer">
+  <hr />
+  <div class="footer-link">
+
+    {% if site.author.github %}
+    <a href="https://github.com/{{ site.author.github }}"><i class="fa fa-github" aria-hidden="true"></i></a>
+    {% endif %}
+
+    {% if site.author.email %}
+    <a href="mailto:{{ site.author.email }}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    {% endif %}
+
   </div>
-</footer>
+  &copy; {{ site.copyright.year }} {{ site.copyright.name }}. All rights reserved.
+</div>
