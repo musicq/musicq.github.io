@@ -25,7 +25,7 @@ github_username:  musicq
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: jekyll-theme-slate
 plugins_dir:
   - jekyll-feed
 
