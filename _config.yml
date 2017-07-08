@@ -11,19 +11,6 @@ description: > # this means to ignore newlines until "baseurl:"
 author:
   email:            liang.kui@hotmail.com
   github:           muiscq
-  facebook:         ""
-  youtubeUser:      ""
-  youtubeChannel:   ""
-  twitter:          ""
-  stackoverflow:    ""
-  quora:            ""
-  linkedin:         ""
-  pinterest:        ""
-  googlePlus:       ""
-  instagram:        ""
-  reddit:           ""
-  medium:           ""
-  tumblr:           ""
 
 copyright:
   year:             2017
