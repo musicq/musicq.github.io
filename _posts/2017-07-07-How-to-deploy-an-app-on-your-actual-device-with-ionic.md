@@ -38,7 +38,7 @@ $ cd myApp && ionic serve # 启动浏览器运行模式
 ```bash
 $ ionic cordova run ios -lcs --device --verbose # 这条命令会首先帮助我们生成 iOS 工程文件，然后开始运行应用。
 ```
-在这个过程中我们很可能会遇到下面的报错
+在这个过程中我们很可能会遇到下面的报错**（在此之前，我们很可能会遇到一些缺失某些依赖的错误，解决办法很简单，我们只需要根据提示缺失什么就全局安装什么即可，如：`sudo npm install lodash._someModulesHere -g`）**
 
 ```accesslog
 Check dependencies
