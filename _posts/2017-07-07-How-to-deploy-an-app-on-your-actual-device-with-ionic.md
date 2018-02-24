@@ -17,27 +17,33 @@ share: true
 ionic 提供了很多命令，它本身也集成了 [`cordova`](http://cordova.apache.org/) 的命令。所以你可以在应用中同时使用 ionic 和 cordova（一般来说，ionic 集成的 cordova 命令都是以 `ionic cordova + cmd` 组成的）。如果在你运行一些命令后，出现了失败的字样，而又抓不到头脑的时候，你可以 `--verbose` 参数来详细了解一下错误原因。
 
 ## 开始一个新应用
-```bash
-$ ionic start myApp sidemenu # 创建一个带有左侧菜单的空白应用
+
+```shell
+ionic start myApp sidemenu # 创建一个带有左侧菜单的空白应用
 ```
+
 应用创建完成了，我们可以现在浏览器中运行一下，看看整体是什么样的。
 
-```bash
-$ cd myApp && ionic serve # 启动浏览器运行模式
+```shell
+cd myApp && ionic serve # 启动浏览器运行模式
 ```
-默认运行地址是 http://localhost:8100/，打开浏览器可以看到一个带有边栏的应用页面。
+
+默认运行地址是 [http://localhost:8100/](http://localhost:8100/)，打开浏览器可以看到一个带有边栏的应用页面。
 
 很好！我们已经成功完成了一个 ionic 应用了！
 
 ## 运行在真实设备
+
 我们已经成功在浏览器中运行了我们的 app，但是这不是我们的最终目的，因为我们想要它能够在我们的真实设备上运行才是一个完整的应用。
 
 > 接下来需要我们有一台 Mac，一台 iOS 设备
 
 使用 USB 将 iOS 设备与电脑连接。然后我们需要在终端运行下面命令
-```bash
-$ ionic cordova run ios -lcs --device --verbose # 这条命令会首先帮助我们生成 iOS 工程文件，然后开始运行应用。
+
+```shell
+ionic cordova run ios -lcs --device --verbose # 这条命令会首先帮助我们生成 iOS 工程文件，然后开始运行应用。
 ```
+
 在这个过程中我们很可能会遇到下面的报错**（在此之前，我们很可能会遇到一些缺失某些依赖的错误，解决办法很简单，我们只需要根据提示缺失什么就全局安装什么即可，如：`sudo npm install lodash._someModulesHere -g`）**
 
 ```accesslog
@@ -49,7 +55,7 @@ Code signing is required for product type 'Application' in SDK 'iOS 10.3'
 
 
 The following build commands failed:
-	Check dependencies
+  Check dependencies
 (1 failure)
 Error: Error code 65 for command: xcodebuild with args: -xcconfig,/Users/musicqpee/myApp/platforms/ios/cordova/build-debug.xcconfig,-workspace,MyApp.xcworkspace,-scheme,MyApp,-configuration,Debug,-destination,generic/platform=iOS,-archivePath,MyApp.xcarchive,archive,CONFIGURATION_BUILD_DIR=/Users/musicqpee/myApp/platforms/ios/build/device,SHARED_PRECOMPS_DIR=/Users/musicqpee/myApp/platforms/ios/build/sharedpch
 
@@ -73,7 +79,7 @@ Error: Error code 65 for command: xcodebuild with args: -xcconfig,/Users/musicqp
 > 2. 打开 xcode -> Preferences -> Accounts
 > 3. 点击左边栏下面的 `+` 号，选择 `Add Apple ID`，将我们的 Apple ID 添加进去。
 
-一切顺利的话，我们就将我们的Apple ID 添加进去了。（如果你遇到了一些麻烦，请 Google 搜索一下相关问题）
+一切顺利的话，我们就将我们的 Apple ID 添加进去了。（如果你遇到了一些麻烦，请 Google 搜索一下相关问题）
 
 接下来进入到我们的项目中的 `./myApp/platforms/ios` 目录下，会看到一个 `.xcodeproj` 后缀的文件，使用 xcode 打开它（默认会使用 xcode）。
 
@@ -107,10 +113,11 @@ Xcode couldn't find a provisioning profile matching 'io.ionic.starter'.
 
 好了，似乎一切都准备妥当了。接下来我们尝试启动应用。
 
-```bash
+```shell
 # 注意启动应用需要在应用的根目录下
-$ ionic cordova run ios -lcs --device --verbose
+ionic cordova run ios -lcs --device --verbose
 ```
+
 果然没这么简单，我们还是失败了，看看报错信息
 
 ```plain
@@ -137,8 +144,8 @@ Error: Error code 1 for command: ios-deploy with args: --justlaunch,--no-wifi,-d
 
 再运行一次程序
 
-```bash
-$ ionic cordova run ios -lcs --device --verbose
+```shell
+ionic cordova run ios -lcs --device --verbose
 ```
 
 好的，程序启动成功啦！撒花~
@@ -151,27 +158,27 @@ unable to locate DeviceSupport directory
 
 这是因为没有找到对应的 iOS 版本，网上有一个很好的解决方法：https://github.com/phonegap/ios-deploy/issues/292#issuecomment-307334866，按照此方案即可轻松解决这个问题。
 
-
 ## 写一个详情页面
 
 奇怪，可能是我生成的项目有问题，我发现我的列表页点进去还是列表，这不符合常理，那我就自己写一个详情页好了。
 
 运行
 
-```bash
-$ ionic generate page detail # 生成一个页面
+```shell
+ionic generate page detail # 生成一个页面
 ```
 
 修改下面几个地方
 
 **app.module.ts** 片段
+
 ```typescript
 // 引入 detail 页
 import { DetailPage } from '../pages/detail/detail';
 
 @NgModule({
   declarations: [
-	...
+  ...
     DetailPage
   ],
   ...
@@ -184,6 +191,7 @@ import { DetailPage } from '../pages/detail/detail';
 ```
 
 **list.ts** 片段
+
 ```typescript
 itemTapped(event, item) {
   // 点击条目有，进入详情页
@@ -194,9 +202,10 @@ itemTapped(event, item) {
 ```
 
 **detail.ts** 片段
+
 ```typescript
 export class DetailPage {
-  item: {title: string, note: string, icon: string};
+  item: { title: string; note: string; icon: string };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // 获取跳转过来的参数
@@ -206,11 +215,11 @@ export class DetailPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
   }
-
 }
 ```
 
 **detail.html** 片段
+
 ```html
 <ion-content padding>
   <!-- 为详情页增加一些内容 -->

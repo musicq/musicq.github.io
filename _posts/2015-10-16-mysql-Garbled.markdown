@@ -13,7 +13,8 @@ share: true
 今天就来记录一下 Mysql 插入数据时乱码的问题吧。相信很多同学开始时都会遇到这种情况，真是挺麻烦的一件事。为什么我大中文不是主流语言呢...很多国外的文档都有日文版的，就没有中文的，气死朕了！
 
 ## 怎样解决
-#### 1.创建数据库
+
+### 1.创建数据库
 
 ```sql
 create database mydb;
@@ -33,7 +34,7 @@ to admin@localhost identified by 'password';
 
 记得在你想要显示中文的每个 table 后面加上编码。
 
-#### 2.php 查询数据库
+### 2.php 查询数据库
 
 ```php
 <?php
@@ -49,14 +50,10 @@ to admin@localhost identified by 'password';
 
 记得加上`$result->query("SET NAMES UTF8");`这个查询条件，表示以 `utf8` 格式查询数据。
 
-#### 3.html部分
+### 3.html 部分
+
 在页面也不能随便取值，需要在头部标签`<head>`内加入格式声明`<meta charset='utf-8' />`。
 
 ---
-<br/>
 
 这样全部条件都具备了，你可以在数据库中插入一些数据试试，看看是不是不管在数据库中，还是在读取后，中都没有乱码掉。
-
-
-
-
