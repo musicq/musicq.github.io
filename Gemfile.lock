@@ -209,6 +209,7 @@ GEM
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
     octokit (4.13.0)
+    net-dns (0.8.0)
       sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
