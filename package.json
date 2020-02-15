@@ -1,11 +1,11 @@
 {
-  "name": "just",
+  "name": "musicq",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Musicq's blog.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Musicq <liang.kui@hotmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/musicq/musicq.github.io/issues"
   },
   "dependencies": {
     "gatsby": "^2.19.7",
@@ -41,15 +41,11 @@
     "gh-pages": "^2.2.0",
     "prettier": "^1.19.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "homepage": "https://github.com/musicq/musicq.github.io",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "https://github.com/musicq/musicq.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",
@@ -59,6 +55,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "deploy": "gatsby build && gh-pages -d public -b gh-pages"
   }
 }
