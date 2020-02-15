@@ -1,0 +1,474 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.75 'Merriweather','Georgia',serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.9);font-family:'Merriweather','Georgia',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:Montserrat,sans-serif;font-weight:900;text-rendering:optimizeLegibility;font-size:2.5rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.73286rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.4427rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;letter-spacing:0.140625em;text-transform:uppercase;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.83255rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.75966rem;line-height:1.1;font-style:italic;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}ul{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;list-style:disc;}ol{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:0.85rem;line-height:1.75rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1rem;line-height:1.75rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}blockquote{margin-left:-1.75rem;margin-right:1.75rem;margin-top:0;padding-bottom:0;padding-left:1.42188rem;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1.20112rem;line-height:1.75rem;color:hsla(0,0%,0%,0.59);font-style:italic;border-left:0.32813rem solid hsla(0,0%,0%,0.9);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.75rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.75rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}li > ul{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.75rem / 2);}code{font-size:0.85rem;line-height:1.75rem;}kbd{font-size:0.85rem;line-height:1.75rem;}samp{font-size:0.85rem;line-height:1.75rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.16667rem;padding-right:1.16667rem;padding-top:0.875rem;padding-bottom:calc(0.875rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.75rem;color:hsla(0,0%,0%,0.9);font-weight:400;}blockquote cite:before{content:"— ";}ul,ol{margin-left:0;}@media only screen and (max-width:480px){ul,ol{margin-left:1.75rem;}blockquote{margin-left:-1.3125rem;margin-right:0;padding-left:0.98438rem;}}h1,h2,h3,h4,h5,h6{margin-top:3.5rem;}a{box-shadow:0 1px 0 0 currentColor;color:#007acc;text-decoration:none;}a:hover,a:active{box-shadow:none;}mark,ins{background:#007acc;color:white;padding:0.10938rem 0.21875rem;text-decoration:none;}a.gatsby-resp-image-link{box-shadow:none;}</style><style data-href="/styles.db16bdbd49d772b52a3f.css">@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-191cc9f50f3b76b9617cb383f19acb7d.woff2) format("woff2"),url(/static/montserrat-latin-100-370318464551d5f25b0f0a78f374faac.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-bdeaeb79db315697bd173a55b097dc18.woff2) format("woff2"),url(/static/montserrat-latin-100italic-ecf7d49386e8f265878e735db34a7c4b.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-85d5ef9db7f2dc6979172a4a3b2c57cb.woff2) format("woff2"),url(/static/montserrat-latin-200-1fc98e126a3d152549240e6244d7e669.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-49095760a498d024fe1a85a078850df9.woff2) format("woff2"),url(/static/montserrat-latin-200italic-fe46cf8b9462c820457d3bf537e4057f.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-7c3daf12b706645b5d3710f863a4da04.woff2) format("woff2"),url(/static/montserrat-latin-300-8dc95fab9cf98d02ca8d76e97d3dff60.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-f20b178ca2024a5eac8e42e6649db86c.woff2) format("woff2"),url(/static/montserrat-latin-300italic-3fe16939288856e8e828fa2661bf2354.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-bc3aa95dca08f5fee5291e34959c27bc.woff2) format("woff2"),url(/static/montserrat-latin-400-8102c4838f9e3d08dad644290a9cb701.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-5cad650422a7184467af5a4d17b264c4.woff2) format("woff2"),url(/static/montserrat-latin-400italic-d191f22af3bb50902b99ac577f81a322.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-92d16e458625f4d2c8940f6bdca0ff09.woff2) format("woff2"),url(/static/montserrat-latin-500-8b763220218ffc11c57c84ddb80e7b26.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-47bfcca6b69d6a9acca7a8bff17193e2.woff2) format("woff2"),url(/static/montserrat-latin-500italic-72c01f753c3940c0b9cb6bf2389caddf.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-6fb1b5623e528e27c18658fecf5ee0ee.woff2) format("woff2"),url(/static/montserrat-latin-600-7c839d15a6f54e7025ba8c0c4b333e8f.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-60789af1c9338ed1a9546722ec54b4f7.woff2) format("woff2"),url(/static/montserrat-latin-600italic-f3d4de8d0afb19e777c79032ce828e3d.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-39d93cf678c740f9f6b2b1cfde34bee3.woff2) format("woff2"),url(/static/montserrat-latin-700-80f10bd382f0df1cd650fec59f3c9394.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-ba136d97b14e82284dd595e257f11c47.woff2) format("woff2"),url(/static/montserrat-latin-700italic-8c98142b425630821139c24bd1698700.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-b7018be9ed6cd94da8b6675b3a468c3b.woff2) format("woff2"),url(/static/montserrat-latin-800-9a9befcf50d64f9d2d19d8b1d1984add.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-540ffdd223d1a9ad3d4e678e1a23372e.woff2) format("woff2"),url(/static/montserrat-latin-800italic-897086f99f4e1f45e6b1e9368527d0bc.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-58cd789700850375b834e8b6776002eb.woff2) format("woff2"),url(/static/montserrat-latin-900-26d42c9428780e545a540bbb50c84bce.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-451157bc8861fe54f523b3669a3def71.woff2) format("woff2"),url(/static/montserrat-latin-900italic-a8ec4957e1c24f5793305763ad9845b3.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-b1158cfcd4aacb9d8fb61625e37af46a.woff2) format("woff2"),url(/static/merriweather-latin-300-cc7de05e166e90320d7d896e0f72a19d.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-8fe52a48089d6ebe46db0b8e7cc66263.woff2) format("woff2"),url(/static/merriweather-latin-300italic-e1331f5397c2a673f9d3765138debdb5.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-8276fdb72ae8f4714d4e6eba704cc39f.woff2) format("woff2"),url(/static/merriweather-latin-400-69f09800f4f6479d06e44eba837df872.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-3a9be9ea9f7aa4af6de7307df21d9fc0.woff2) format("woff2"),url(/static/merriweather-latin-400italic-d76079ed7541a433a54f79316de086e9.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-fa534be7ffa380e39a7f6e03bf9a5e03.woff2) format("woff2"),url(/static/merriweather-latin-700-ba56ea84b8084b7ff9677f50d3cd81bd.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-1ef5edaaa20ae53ea50399884c5e48c6.woff2) format("woff2"),url(/static/merriweather-latin-700italic-534bc9e7ce93c73d73426e46acd78092.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-7528fb70e8a4a82c7305e72ff43ac25f.woff2) format("woff2"),url(/static/merriweather-latin-900-3799b6e2f5ed3fcccf9d7a708d7419fa.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-e1b4d2aaa78e12ad84aaf8a56321e4c2.woff2) format("woff2"),url(/static/merriweather-latin-900italic-2ae22f731b3424e8dbb4b37f7ca6e708.woff) format("woff")}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}a{color:#17bf63}a:hover{color:#139048}</style><meta name="generator" content="Gatsby 2.19.7"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/icons/icon-48x48.png?v=8892208ac01b842d57a2da8b45a0c57b"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=8892208ac01b842d57a2da8b45a0c57b"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=8892208ac01b842d57a2da8b45a0c57b"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=8892208ac01b842d57a2da8b45a0c57b"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=8892208ac01b842d57a2da8b45a0c57b"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=8892208ac01b842d57a2da8b45a0c57b"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=8892208ac01b842d57a2da8b45a0c57b"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=8892208ac01b842d57a2da8b45a0c57b"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=8892208ac01b842d57a2da8b45a0c57b"/><title data-react-helmet="true">使用 React + Rxjs 实现一个虚拟滚动组件 | MusicQ</title><meta data-react-helmet="true" name="description" content="你遇到过在渲染长列表时卡顿的现象吗？"/><meta data-react-helmet="true" property="og:title" content="使用 React + Rxjs 实现一个虚拟滚动组件"/><meta data-react-helmet="true" property="og:description" content="你遇到过在渲染长列表时卡顿的现象吗？"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Liang Kui"/><meta data-react-helmet="true" name="twitter:title" content="使用 React + Rxjs 实现一个虚拟滚动组件"/><meta data-react-helmet="true" name="twitter:description" content="你遇到过在渲染长列表时卡顿的现象吗？"/><link as="script" rel="preload" href="/webpack-runtime-4035270588836453bf5c.js"/><link as="script" rel="preload" href="/styles-fb3a0e2694e1dc7ecada.js"/><link as="script" rel="preload" href="/app-aa999d41fe05c1bf97e5.js"/><link as="script" rel="preload" href="/commons-79c668329b01e3c4050d.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-60573f36912359d44b74.js"/><link as="fetch" rel="preload" href="/page-data/build-virtual-list-with-react-and-rxjs/page-data.json" crossorigin="anonymous"/></head><body><script>(function() { try {
+  var mode = localStorage.getItem('theme-ui-color-mode');
+  if (!mode) return
+  document.body.classList.add('theme-ui-' + mode);
+} catch (e) {} })();</script><div id="___gatsby"><style data-emotion-css="ohxpcv">body{color:var(--theme-ui-colors-text,#111);background-color:var(--theme-ui-colors-background,#fff);}</style><style data-emotion-css="1d7m1w5">*{box-sizing:border-box;}body{margin:0;}</style><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div style="margin-left:auto;margin-right:auto;max-width:42rem;padding:2.625rem 1.3125rem"><header><h3 style="font-family:Montserrat, sans-serif;margin-top:0"><a style="box-shadow:none;text-decoration:none;color:inherit" href="/">MusicQ</a></h3></header><main><article><header><h1 style="margin-top:1.75rem;margin-bottom:0">使用 React + Rxjs 实现一个虚拟滚动组件</h1><p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem">January 11, 2019</p></header><section><h1>为什么使用虚拟列表</h1>
+<p>在我们的业务场景中遇到这么一个问题，有一个商户下拉框选择列表，我们简单的使用 antd 的 select 组件，发现每次点击下拉框，从点击到弹出会存在很严重的卡顿，在本地测试时，数据库只存在 370 条左右数据，这个量级的数据都能感到很明显的卡顿了（开发环境约 700+ms），更别提线上 2000+ 的数据了。Antd 的 select 性能确实不敢恭维，它会简单的将全部数据 map 出来，在点击的时候初始化并保存在 document.body 下的一个 DOM 节点中缓存起来，这又带来了另一个问题，我们的场景中，商户选择列表很多模块都用到了，每次点击之后都会新生成 2000+ 的 DOM 节点，如果把这些节点都存到 document 下，会造成 DOM 节点数量暴涨。</p>
+<p>虚拟列表就是为了解决这种问题而存在的。</p>
+<h1>虚拟列表原理</h1>
+<p>虚拟列表本质就是使用少量的 DOM 节点来模拟一个长列表。如下图左所示，不论多长的一个列表，实际上出现在我们视野中的不过只是其中的一部分，这时对我们来说，在视野外的那些 item 就不是必要的存在了，如图左中 item 5 这个元素）。即使去掉了 item 5 （如右图），对于用户来说看到的内容也完全一致。</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7633e636a9552488b0cd6b9ad197dd48/0eb6d/image-20190109095724662.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.440306681270535%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABbklEQVQoz61Sy26DMBDs/39XD1EqVeqhCSSQAoLwCrYBP3hPF5O2UU89dKX1etezo/HaT/hHW5YFT8u8gOkEmfKQSx9Z6+HanLe9pJr2oLsWwuRbbjE+0jsmlxeqn6H71pJawpi7SGoXpQoI6CPhJxTqA4UMELA3NIohYWckjWPraeNRz8mSlTqAX75C6HIjnIkwLA8Q6oZhNugmjZ68mxTFDtHNgZA3RIWLxlSE6ex5P23YaRkQlQ64LL4IZ8TMBVcFASQKdkWchdTMLOmqvtWcmgij8zsmtZhaVehnTYKOvwkd1IYULgZmbKGHFt2sbJ6Ik73yqrTuCiJQdF5D9gJ6bCwmqg4kKH+YISnMRGiLlUxRtSmYXD1HWL2j0Qx5Hdo5qb6B7Opv173ElftoDf+ZYSyO8PgOPt/jdNvhkD3DF3ubX8SLvfJq4zBiIB8ffM3naXn4NrT0Iw16NBjoEQYbzT2udRr8PP3pD672CVOEsq2rBI3ZAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="image-20190109095724662"
+        title="image-20190109095724662"
+        src="/static/7633e636a9552488b0cd6b9ad197dd48/fcda8/image-20190109095724662.png"
+        srcset="/static/7633e636a9552488b0cd6b9ad197dd48/12f09/image-20190109095724662.png 148w,
+/static/7633e636a9552488b0cd6b9ad197dd48/e4a3f/image-20190109095724662.png 295w,
+/static/7633e636a9552488b0cd6b9ad197dd48/fcda8/image-20190109095724662.png 590w,
+/static/7633e636a9552488b0cd6b9ad197dd48/efc66/image-20190109095724662.png 885w,
+/static/7633e636a9552488b0cd6b9ad197dd48/0eb6d/image-20190109095724662.png 913w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>下面我们来一步步将步骤分解，具体代码可以查看 <a href="https://stackblitz.com/edit/react-ts-virtuallist">Online Demo</a>。</p>
+<p>这里是我通过这种思想实现的一个库，功能会更完善些。</p>
+<p><a href="https://github.com/musicq/vist">https://github.com/musicq/vist</a></p>
+<h2>创建适合容器高度的 DOM 元素</h2>
+<p>以上图为例，想象一个拥有 1000 元素的列表，如果使用上图左的方式的话，就需要创建 1000 个 DOM 节点添加在 document 中，而其实每次出现在视野中的元素，只有 4 个，那么剩余的 996 个元素就是浪费。而如果就只创建 4 个 DOM 节点的话，这样就能节省 996 个 DOM 节点的开销。</p>
+<h3>解题思路</h3>
+<blockquote>
+<p>真实 DOM 数量 = Math.ceil(容器高度 / 条目高度)</p>
+</blockquote>
+<p>定义组件有如下接口</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">IVirtualListOptions</span> <span class="token punctuation">{</span>
+  height<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">IVirtualListProps</span> <span class="token punctuation">{</span>
+  data$<span class="token operator">:</span> Observable<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token punctuation">;</span>
+  options$<span class="token operator">:</span> Observable<span class="token operator">&lt;</span>IVirtualListOptions<span class="token operator">></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>首先需要有一个容器高度的流来装载容器高度</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"> <span class="token keyword">private</span> containerHeight$ <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BehaviorSubject</span><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span></code></pre></div>
+<p>需要在组件 mount 之后，才能测量容器的真实高度。可以通过一个 ref 来绑定容器元素，在 <code class="language-text">componentDidMount</code> 之后，获取容器高度，并通知 <code class="language-text">containerHeight$</code>。</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">this</span><span class="token punctuation">.</span>containerHeight$<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span>virtualListContainerElm<span class="token punctuation">.</span>clientHeight<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>获取了容器高度之后，根据上面的公式来计算视窗内应该显示的 DOM 数量</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> actualRows$ <span class="token operator">=</span> <span class="token function">combineLatest</span><span class="token punctuation">(</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>containerHeight$<span class="token punctuation">,</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>options$
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>ch<span class="token punctuation">,</span> <span class="token punctuation">{</span> height <span class="token punctuation">}</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>ch <span class="token operator">/</span> height<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>通过组合 <code class="language-text">actualRows$</code> 和 <code class="language-text">data$</code> 两个流，来获取到应当出现在视窗内的数据切片</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> dataInViewSlice$ <span class="token operator">=</span> <span class="token function">combineLatest</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>data$<span class="token punctuation">,</span> actualRows$<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+  <span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>data<span class="token punctuation">,</span> actualRows<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> actualRows<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>这样，一个当前时刻的数据源就获取到了，订阅它来将列表渲染出来</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript">dataInViewSlice$<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> data <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p><strong>效果</strong></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4d59d2c99c9b205b5b0bb7a2687bba90/ca3c3/image-20190108180111308.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35.67567567567567%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA10lEQVQoz4VQXW/DIAzk///GPWwPkZJ0hI9AKEntmw1Np01Ve+JkC3TnMyaEgH3fG1NK8N5DcRwHFmsxXr4xLx7ruiLG2OrZq1Z71ZRSkHOGUZMTauqc670YTp8jho8vXOYF27Y1wXP+vhmdcKLW+jAkJvglww4znPWS5ipJiiTqNcbeK2PsNecKo9GfJSRmWZsQJll3jqAbQa7eshnqf6mZ/oOyGZIa3uBHBze4ZtjBeAXTxfRg17AcRi074hRQZRUmvj/xS5r/E7hl18NINqGm6x+jd/gBkYEjtIqGFKMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="image-20190108180111308"
+        title="image-20190108180111308"
+        src="/static/4d59d2c99c9b205b5b0bb7a2687bba90/fcda8/image-20190108180111308.png"
+        srcset="/static/4d59d2c99c9b205b5b0bb7a2687bba90/12f09/image-20190108180111308.png 148w,
+/static/4d59d2c99c9b205b5b0bb7a2687bba90/e4a3f/image-20190108180111308.png 295w,
+/static/4d59d2c99c9b205b5b0bb7a2687bba90/fcda8/image-20190108180111308.png 590w,
+/static/4d59d2c99c9b205b5b0bb7a2687bba90/efc66/image-20190108180111308.png 885w,
+/static/4d59d2c99c9b205b5b0bb7a2687bba90/c83ae/image-20190108180111308.png 1180w,
+/static/4d59d2c99c9b205b5b0bb7a2687bba90/ca3c3/image-20190108180111308.png 1850w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>给定的数据有 1000 条，只渲染了前 7 条数据出来，这符合预期。</p>
+<p>现在存在另一个问题，容器的滚动条明显不符合 1000 条数据该有的高度，因为我们只有 7 条真实 DOM，没有办法将容器撑开。</p>
+<h2>撑开容器</h2>
+<p>在原生的列表实现中，我们不需要处理任何事情，只需要把 DOM 添加到 document 中就可以了，浏览器会计算容器的真实高度，以及滚动到什么位置会出现什么元素。但是虚拟列表不会，这就需要我们自行解决容器的高度问题。</p>
+<p>为了能让容器看起来和真的拥有 1000 条数据一样，就需要将容器的高度撑开到 1000 条元素该有的高度。这一步很容易，参考下面公式</p>
+<h3>解题思路</h3>
+<blockquote>
+<p>真实容器高度 = 数据总数 * 每条 item 的高度</p>
+</blockquote>
+<p>将上述公式换成代码</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> scrollHeight$ <span class="token operator">=</span> <span class="token function">combineLatest</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>data$<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>options$<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+  <span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>data<span class="token punctuation">,</span> <span class="token punctuation">{</span> height <span class="token punctuation">}</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> data<span class="token punctuation">.</span>length <span class="token operator">*</span> height<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p><strong>效果</strong></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/0d8bcd1c2151acac278f1d5c1e3eb359/5c744/image-20190108182216164.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 48.25870646766169%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABS0lEQVQoz42S627DIAyF8/5vt9+TprYbbQLlkpIQICRndrq0addJc3SEEObj2E4VQkDXdTfxXimFvu/BMc8zUkqomxqNlDgpjffdAVIb1HW95LKO4gh/8ajwIoZhWOBXIjDNE1rdwkoNqRoIaeCHtDy0KsaIcRyvQHaxioMT2OkaKSeIvcDu7QOn/QFqT87IrVQS1lo4Z5fVWvM3cFvyNE2La/tpEPgiuXU2IKeRnI2UPyLnQmv5P5BOIWsPIzSGVqJ1PTmMMCZCiB5aR3if78Bt5JxvJa9AjhgzzJeFlwrtSeEsA8JQ0DSByo2UMV2B3MxSyiK+zLBfDpdHZ9ijJjnonUYO6cEIp1Q8He7PVgxjl2uswInUNg7+7MmhQwr55/zespe/zf3F+QHI30Vd0EoaCpW+Oty2rNoO5JWegU5YdKZD6hMKTfYZ+A142AwqBIjfIQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="image-20190108182216164"
+        title="image-20190108182216164"
+        src="/static/0d8bcd1c2151acac278f1d5c1e3eb359/fcda8/image-20190108182216164.png"
+        srcset="/static/0d8bcd1c2151acac278f1d5c1e3eb359/12f09/image-20190108182216164.png 148w,
+/static/0d8bcd1c2151acac278f1d5c1e3eb359/e4a3f/image-20190108182216164.png 295w,
+/static/0d8bcd1c2151acac278f1d5c1e3eb359/fcda8/image-20190108182216164.png 590w,
+/static/0d8bcd1c2151acac278f1d5c1e3eb359/efc66/image-20190108182216164.png 885w,
+/static/0d8bcd1c2151acac278f1d5c1e3eb359/c83ae/image-20190108182216164.png 1180w,
+/static/0d8bcd1c2151acac278f1d5c1e3eb359/5c744/image-20190108182216164.png 1206w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>这样看起来就比较像有 1000 个元素的列表了。</p>
+<p>但是滚动之后发现，下面全是空白的，由于列表只存在 7 个元素，空白是正常的。而我们期望随着滚动，元素能正确的出现在视野中。</p>
+<h2>滚动列表</h2>
+<p>这里有三种实现方式，而前两种基本一样，只有细微的差别，我们先从最初的方案说起。</p>
+<h3>完全重刷列表</h3>
+<p>这种方案是最简单的实现，我们只需要在列表滚动到某一位置的时候，去计算出当前的视窗中列表的索引，有了索引就能得到当前时刻的数据切片，从而将数据渲染到视图中。</p>
+<p>为了让列表效果更好，我们将渲染的真实 DOM 数量多增加 3 个</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> actualRows$ <span class="token operator">=</span> <span class="token function">combineLatest</span><span class="token punctuation">(</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>containerHeight$<span class="token punctuation">,</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>options$
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>ch<span class="token punctuation">,</span> <span class="token punctuation">{</span> height <span class="token punctuation">}</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>ch <span class="token operator">/</span> height<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>首先定义一个视窗滚动事件流</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> scrollWin$ <span class="token operator">=</span> <span class="token function">fromEvent</span><span class="token punctuation">(</span>virtualListElm<span class="token punctuation">,</span> <span class="token string">"scroll"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+  <span class="token function">startWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span> target<span class="token operator">:</span> <span class="token punctuation">{</span> scrollTop<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>在每次滚动的时候去计算当前状态的索引</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> shouldUpdate$ <span class="token operator">=</span> <span class="token function">combineLatest</span><span class="token punctuation">(</span>
+  scrollWin$<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> virtualListElm<span class="token punctuation">.</span>scrollTop<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>options$<span class="token punctuation">,</span>
+  actualRows$
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+  <span class="token comment">// 计算当前列表中最顶部的索引</span>
+  <span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>st<span class="token punctuation">,</span> <span class="token punctuation">{</span> height <span class="token punctuation">}</span><span class="token punctuation">,</span> actualRows<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> firstIndex <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>st <span class="token operator">/</span> height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> lastIndex <span class="token operator">=</span> firstIndex <span class="token operator">+</span> actualRows <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>firstIndex<span class="token punctuation">,</span> lastIndex<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>这样就能在每一次滚动的时候得到视窗内数据的起止索引了，接下来只需要根据索引算出 data 切片就好了。</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> dataInViewSlice$ <span class="token operator">=</span> <span class="token function">combineLatest</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>data$<span class="token punctuation">,</span> shouldUpdate$<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+  <span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>data<span class="token punctuation">,</span> <span class="token punctuation">[</span>firstIndex<span class="token punctuation">,</span> lastIndex<span class="token punctuation">]</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span>
+    data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>firstIndex<span class="token punctuation">,</span> lastIndex <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>拿到了正确的数据，还没完，想象一下，虽然我们随着滚动的发生计算出了正确的数据切片，但是正确的数据却没有出现在正确的位置，因为他们的位置是固定不变的。</p>
+<p>因此还需要对元素的位置做位移（逮虾户）的操作，首先修改一下传给视图的数据结构</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> dataInViewSlice$ <span class="token operator">=</span> <span class="token function">combineLatest</span><span class="token punctuation">(</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>data$<span class="token punctuation">,</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>options$<span class="token punctuation">,</span>
+  shouldUpdate$
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+  <span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>data<span class="token punctuation">,</span> <span class="token punctuation">{</span> height <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>firstIndex<span class="token punctuation">,</span> lastIndex<span class="token punctuation">]</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>firstIndex<span class="token punctuation">,</span> lastIndex <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      origin<span class="token operator">:</span> item<span class="token punctuation">,</span>
+      <span class="token comment">// 用来定位元素的位置</span>
+      $pos<span class="token operator">:</span> firstIndex <span class="token operator">*</span> height<span class="token punctuation">,</span>
+      $index<span class="token operator">:</span> firstIndex<span class="token operator">++</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>接下把 HTML 结构也做一下修改，将每一个元素的位移添加进去</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>div
+    key<span class="token operator">=</span><span class="token punctuation">{</span>data<span class="token punctuation">.</span>$index<span class="token punctuation">}</span>
+    style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+      position<span class="token operator">:</span> <span class="token string">"absolute"</span><span class="token punctuation">,</span>
+      width<span class="token operator">:</span> <span class="token string">"100%"</span><span class="token punctuation">,</span>
+      <span class="token comment">// 定位每一个 item</span>
+      transform<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">translateY(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token punctuation">.</span>$pos<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px)</span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token operator">></span>
+    <span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>children <span class="token keyword">as</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>origin<span class="token punctuation">)</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>这样就完成了一个虚拟列表的基本形态和功能了。</p>
+<p><strong>效果如下</strong></p>
+<p><img src="/6cea61e04123ca0b9f55e263366bc31f/v1.gif" alt="v1"></p>
+<p>但是这个版本的虚拟列表并不完美，它存在以下几个问题</p>
+<ol>
+<li>计算浪费</li>
+<li>DOM 节点的创建和移除</li>
+</ol>
+<h4>计算浪费</h4>
+<p>每次滚动都会使得 data 发生计算，虽然借助 virtual DOM 会将不必要的 DOM 修改拦截掉，但是还是会存在计算浪费的问题。</p>
+<p><strong>实际上我们确实应该触发更新的时机是在当前列表的索引发生了变化的时候</strong>，即开始我的列表索引为 <code class="language-text">[0, 1, 2]</code>，滚动之后，索引变为了 <code class="language-text">[1, 2, 3]</code>，这个时机是我们需要更新视图的时机。借助于 rxjs 的操作符，可以很轻松的搞定这个事情，只需要把 <code class="language-text">shouldUpdate$</code> 流做一次过滤操作即可。</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> shouldUpdate$ <span class="token operator">=</span> <span class="token function">combineLatest</span><span class="token punctuation">(</span>
+  scrollWin$<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> virtualListElm<span class="token punctuation">.</span>scrollTop<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>options$<span class="token punctuation">,</span>
+  actualRows$
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+  <span class="token comment">// 计算当前列表中最顶部的索引</span>
+  <span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>st<span class="token punctuation">,</span> <span class="token punctuation">{</span> height <span class="token punctuation">}</span><span class="token punctuation">,</span> actualRows<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">[</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>st <span class="token operator">/</span> height<span class="token punctuation">)</span><span class="token punctuation">,</span> actualRows<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment">// 如果索引有改变，才触发重新 render</span>
+  <span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>curIndex<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> curIndex <span class="token operator">!==</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lastFirstIndex<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment">// update the index</span>
+  <span class="token function">tap</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>curIndex<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lastFirstIndex <span class="token operator">=</span> curIndex<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>firstIndex<span class="token punctuation">,</span> actualRows<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> lastIndex <span class="token operator">=</span> firstIndex <span class="token operator">+</span> actualRows <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>firstIndex<span class="token punctuation">,</span> lastIndex<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p><strong>效果</strong></p>
+<p><img src="/764da756319088c38c10093fdb03aed1/render-once.gif" alt="render-once"></p>
+<h4>DOM 节点的创建和移除</h4>
+<p>如果仔细对比会发现，每次列表发生更新之后，是会发生 DOM 的创建和删除的，如下图所示，在滚动了之后，原先位于列表中的第一个节点被移除了。</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/55ca88d4a5c682579aea17d5d06235d8/d6a46/image-20190109152622180.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.547619047619044%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABe0lEQVQoz5WS6ZKjMAyEef933ByTcJjDt42dBXolEzKzW8mPdVWXJWF/iEaVtRY5Z6SU4L3HPM/YABit0bQCdzFCGwNNuTG7lFIl5928npmiKsaIYy3LUuC8kk9wvcIcM/5nVdzVOyDXh1qgu15xvQ643WTR19eE83lCUz/VTOg6hXHQcMbuwG3bsK4rHo/HC7isCx2IMM0dza0nmCOYQV07XC6GcoO2cWU/nTSk0AjKo2IAgw4xmF/APs4hw/cdRCPJz5m6CRAi4n73aNs95tqvk4UaHKIKqN75cACjz3CihWgZyJc9fV74B+hxOhNwfALL5TfiTqOK+J0f5O1aRGWqby9xftS2kuDvDg8YL6cdumaAVvtIOGfJklyUcyriUUtpfu67PgIVzdalbjCMIyap0YsecuK58wiBIZlii74fwbPMPzeE8BnIlzQB5CQxTgZSWljloCVJBxgbYU0qsbWB/E6l+49A42hk6OC2rT+0m8Yxe7xPxHfM+gOh/VRtORQ4kQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="image-20190109152622180"
+        title="image-20190109152622180"
+        src="/static/55ca88d4a5c682579aea17d5d06235d8/fcda8/image-20190109152622180.png"
+        srcset="/static/55ca88d4a5c682579aea17d5d06235d8/12f09/image-20190109152622180.png 148w,
+/static/55ca88d4a5c682579aea17d5d06235d8/e4a3f/image-20190109152622180.png 295w,
+/static/55ca88d4a5c682579aea17d5d06235d8/fcda8/image-20190109152622180.png 590w,
+/static/55ca88d4a5c682579aea17d5d06235d8/efc66/image-20190109152622180.png 885w,
+/static/55ca88d4a5c682579aea17d5d06235d8/d6a46/image-20190109152622180.png 1008w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>而我期望的理想的状态是，能够重用 DOM，不去删除和创建它们，这就是第二个版本的实现。</p>
+<h3>复用 DOM 重刷列表</h3>
+<p>为了达到节点的复用，我们需要将列表的 key 设置为数组索引，而非一个唯一的 id，如下</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">data<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">&lt;</span>div key<span class="token operator">=</span><span class="token punctuation">{</span>i<span class="token punctuation">}</span><span class="token operator">></span><span class="token punctuation">{</span>data<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>只需要这一点改动，再看看效果</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ce429729a33656a6295d43fc61855254/6acbf/image-20190109155514513.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 60.43956043956044%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAABmElEQVQoz5WS646kIBCFff93nEl7G7UVBEEEFM9WYXcnk/XHLskJJRQfJXWKZVkQY8xa1xUhBATvMT5H1P0EoTSMWaApzxgDztdaf2be49gs11w45/Aex3Fk4JlOmEHBa4PzxH+Nwlr7C5ir3SOmQeBZ1agfP3g8JKpKoCwFvr8n+p7QNiyBtpXoO4l5UmDWB5hSyrBcIZXlnIfuR0xti7IyaJolqyw16uqKu87g60vhp6UneCo6v6NgwPsNWQzmEcIOO0nIrkPdrHT4UtNYqmrNGgZHFTPcwIwLjv1Acf8S5wtIv6EVpAyYZ58lpf/EWgeMo6O1DdviLiD/3p222WHf4oU/07835Vddr5b6zaNvnmSdCWpWEEJmS20bVUKW8iSOeY1dktdfugXyRtn1GAjE/uLGKaUyKMaQG8c5QojsRQZzTu7yHZAbYxeDjW63livw2EPMnfd+p/2TLHbm+VL6PNUtkP2o5Aw9k7+UpQYYas5KM8d8wZ7B6xpzzJe9obfA/Uh0IBI4UeKBg3SmK37b6i9fvCr8AxjHpPFJEeV0AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="image-20190109155514513"
+        title="image-20190109155514513"
+        src="/static/ce429729a33656a6295d43fc61855254/fcda8/image-20190109155514513.png"
+        srcset="/static/ce429729a33656a6295d43fc61855254/12f09/image-20190109155514513.png 148w,
+/static/ce429729a33656a6295d43fc61855254/e4a3f/image-20190109155514513.png 295w,
+/static/ce429729a33656a6295d43fc61855254/fcda8/image-20190109155514513.png 590w,
+/static/ce429729a33656a6295d43fc61855254/efc66/image-20190109155514513.png 885w,
+/static/ce429729a33656a6295d43fc61855254/6acbf/image-20190109155514513.png 1001w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>可以看到数据变了，但是 DOM 并没有被移除，而是被复用了，这是我想要的效果。</p>
+<p>观察一下这个版本的实现与上一版本有何区别</p>
+<p><img src="/b381ea9e0511d73e468ad7041d7126a2/v2.gif" alt="v2"></p>
+<p>是的，这个版本，每一次 render 都会使得整个列表样式发生变化，而且还有一个问题，就是列表滚动到最后的时候，会发生 DOM 减少的情况，虽然并不影响显示，但是还是有 DOM 的创建和移除的问题存在。</p>
+<h3>复用 DOM + 按需更新列表</h3>
+<p>为了能让列表只按照需要进行更新，而不是全部重刷，我们就需要明确知道有哪些 DOM 节点被移出了视野范围，操作这些视野范围外的节点来补充列表，从而完成列表的按需更新，如下图</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 466px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/477763debcfe0f6f260311aa0062279a/fc1a1/image-20190109100104572.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 74.0343347639485%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAACOElEQVQ4y32UaXPaMBCG+f9/qDPt13SSfujkaBISx5AAvvAJsiXLOvx2JZMA6eGZB612NSu9u0Iz0GethTEGxo2fsAfMf3j/xnHEzNIPr0r02y36PD9DEjzLPJ9jPl7k6NIUknOfbEpIO8iywliUMLToFJsXkEkCEcV/xBxjWWJIM4i2RS8ljNaYuaxs3yCJ1siSGNs0OSPPUs9nvyParFCWmS+XpmSOmRo0nvMrPJXf0aoG3O7AzZFW1WBDRXbz4evI7i3Dqn7AXf4N+66m01kopTDTylDgHq/1NYRmkLY9g6s9+LBHb46+3jAMliNpQoT1D3SC0SktnVBNkuPtGsHyEaLnVAtB8IlBQKoeA+Hs95ggBiWxjl8RruYYBnmUPEhNci/wwi7Q6QZiJCxJwg5vaYD54hbPb/dYxk+oeer93NboR4YNe8Cv+gt2bQVrDpKdsdo+IdjcgEuSozqIoYWgkfEGDauI0ttcMu93cakF1lmI5+gnKes+GjNz2qMqwCK98wt73fmkDqn5Ge8xoaaEUbHAYnvjS+CS+RMqkhxUlwjZpe/cAFoM9oHrrivFqc+hwBG3czw0Xw+Sx0NT7IiiSfAWBcjpThXVljiMNK/q3HP0T5Q0X8dLauiS/ppOrjnUkBJqFdEOAaScE49nMHaLXXMN2R99A63raW50QCxQFimE6KmOekrYyzVNXojFCSHtvATnc4/W4VnM2GmUMkCabujqKP9AzI6vzd9xG7q7+q+44/S1+Q1RlX3j/YhptgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="image-20190109100104572"
+        title="image-20190109100104572"
+        src="/static/477763debcfe0f6f260311aa0062279a/fc1a1/image-20190109100104572.png"
+        srcset="/static/477763debcfe0f6f260311aa0062279a/12f09/image-20190109100104572.png 148w,
+/static/477763debcfe0f6f260311aa0062279a/e4a3f/image-20190109100104572.png 295w,
+/static/477763debcfe0f6f260311aa0062279a/fc1a1/image-20190109100104572.png 466w"
+        sizes="(max-width: 466px) 100vw, 466px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>假设用户在向下滚动列表的时候，item 1 的 DOM 节点被移出了视野，这时我们就可以把它移动到 item 5 的位置，从而完成一次滚动的连续，<strong>这里我们只改变了元素的位置，并没有创建和删除 DOM</strong>。</p>
+<p><code class="language-text">dataInViewSlice$</code> 流依赖<code class="language-text">props.data$</code>、<code class="language-text">props.options$</code>、<code class="language-text">shouldUpdate$</code>三个流来计算出当前时刻的 data 切片，而视图的数据完全是根据 <code class="language-text">dataInViewSlice$</code> 来渲染的，所以如果想要按需更新列表，我们就需要在这个流里下手。</p>
+<p>在容器滚动的过程中存在如下几种场景</p>
+<ol>
+<li>用户慢慢地<strong>向上</strong>或者<strong>向下</strong>滚动：移出视野的元素是一个接一个的</li>
+<li>用户直接<strong>跳转</strong>到列表的一个指定位置：这时整个列表都可能完全移出视野</li>
+</ol>
+<p>但是这两种场景其实都可以归纳为一种情况，都是<strong>求前一种状态与当前状态之间的索引差集</strong>。</p>
+<h4>实现</h4>
+<p>在 <code class="language-text">dataInViewSlice$</code> 流中需要做两步操作。第一，在初始加载，还没有数组的时候，填充一个数组出来；第二，根据滚动到当前时刻时的起止索引，计算出二者的索引差集，更新数组，这一步便是按需更新的核心所在。</p>
+<p>先来实现第一步，只需要稍微改动一下原先的 <code class="language-text">dataInViewSlice$</code> 流的 map 实现即可完成初始数据的填充</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> dataSlice <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stateDataSnapshot<span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>dataSlice<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>stateDataSnapshow <span class="token operator">=</span> data
+    <span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>firstIndex<span class="token punctuation">,</span> lastIndex <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      origin<span class="token operator">:</span> item<span class="token punctuation">,</span>
+      $pos<span class="token operator">:</span> firstIndex <span class="token operator">*</span> height<span class="token punctuation">,</span>
+      $index<span class="token operator">:</span> firstIndex<span class="token operator">++</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>接下来完成按需更新数组的部分，首先需要知道滚动前后两种状态之间的索引差异，比如滚动前的索引为 <code class="language-text">[0,1,2]</code>，滚动后的索引为 <code class="language-text">[1,2,3]</code>，那么他们的差集就是 <code class="language-text">[0]</code>，说明老数组中的第一个元素被移出了视野，那么就需要用这第一个元素来补充到列表最后，成为最后一个元素。</p>
+<p>首先将数组差集求出来</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// 获取滚动前后索引差集</span>
+<span class="token keyword">const</span> diffSliceIndexes <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getDifferenceIndexes</span><span class="token punctuation">(</span>
+  dataSlice<span class="token punctuation">,</span>
+  firstIndex<span class="token punctuation">,</span>
+  lastIndex
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>有了差集就可以计算新的数组组成了。还以此图为例，用户向下滚动，当元素被移除视野的时候，第一个元素（索引为 0）就变成最后一个元素（索引为 4），也就是，oldSlice <code class="language-text">[0,1,2,3]</code> -> newSlice <code class="language-text">[1,2,3,4]</code>。</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 466px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/477763debcfe0f6f260311aa0062279a/fc1a1/image-20190109100104572.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 74.0343347639485%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAACOElEQVQ4y32UaXPaMBCG+f9/qDPt13SSfujkaBISx5AAvvAJsiXLOvx2JZMA6eGZB612NSu9u0Iz0GethTEGxo2fsAfMf3j/xnHEzNIPr0r02y36PD9DEjzLPJ9jPl7k6NIUknOfbEpIO8iywliUMLToFJsXkEkCEcV/xBxjWWJIM4i2RS8ljNaYuaxs3yCJ1siSGNs0OSPPUs9nvyParFCWmS+XpmSOmRo0nvMrPJXf0aoG3O7AzZFW1WBDRXbz4evI7i3Dqn7AXf4N+66m01kopTDTylDgHq/1NYRmkLY9g6s9+LBHb46+3jAMliNpQoT1D3SC0SktnVBNkuPtGsHyEaLnVAtB8IlBQKoeA+Hs95ggBiWxjl8RruYYBnmUPEhNci/wwi7Q6QZiJCxJwg5vaYD54hbPb/dYxk+oeer93NboR4YNe8Cv+gt2bQVrDpKdsdo+IdjcgEuSozqIoYWgkfEGDauI0ttcMu93cakF1lmI5+gnKes+GjNz2qMqwCK98wt73fmkDqn5Ge8xoaaEUbHAYnvjS+CS+RMqkhxUlwjZpe/cAFoM9oHrrivFqc+hwBG3czw0Xw+Sx0NT7IiiSfAWBcjpThXVljiMNK/q3HP0T5Q0X8dLauiS/ppOrjnUkBJqFdEOAaScE49nMHaLXXMN2R99A63raW50QCxQFimE6KmOekrYyzVNXojFCSHtvATnc4/W4VnM2GmUMkCabujqKP9AzI6vzd9xG7q7+q+44/S1+Q1RlX3j/YhptgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="image-20190109100104572"
+        title="image-20190109100104572"
+        src="/static/477763debcfe0f6f260311aa0062279a/fc1a1/image-20190109100104572.png"
+        srcset="/static/477763debcfe0f6f260311aa0062279a/12f09/image-20190109100104572.png 148w,
+/static/477763debcfe0f6f260311aa0062279a/e4a3f/image-20190109100104572.png 295w,
+/static/477763debcfe0f6f260311aa0062279a/fc1a1/image-20190109100104572.png 466w"
+        sizes="(max-width: 466px) 100vw, 466px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>在变换的过程中，<code class="language-text">[1,2,3]</code> 三个元素始终是不需要动的，因此我们只需要截取不变的 <code class="language-text">[1,2,3]</code>再加上新的索引 4 就能变成 <code class="language-text">[1,2,3,4]</code>了。</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// 计算视窗的起始索引</span>
+<span class="token keyword">let</span> newIndex <span class="token operator">=</span> lastIndex <span class="token operator">-</span> diffSliceIndexes<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+diffSliceIndexes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">index</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> item <span class="token operator">=</span> dataSlice<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  item<span class="token punctuation">.</span>origin <span class="token operator">=</span> data<span class="token punctuation">[</span>newIndex<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  item<span class="token punctuation">.</span>$pos <span class="token operator">=</span> newIndex <span class="token operator">*</span> height<span class="token punctuation">;</span>
+  item<span class="token punctuation">.</span>$index <span class="token operator">=</span> newIndex<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>stateDataSnapshot <span class="token operator">=</span> dataSlice<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>这样就完成了一个向下滚动的数组拼接，如下图所示，DOM 确实是只更新超出视野的元素，而没有重刷整个列表。</p>
+<p><img src="/405ceb5800244d355386a878e855c4ca/v3.1.gif" alt="v3.1"></p>
+<p>但是这只是针对向下滚动的，如果往上滚动，这段代码就会出问题。原因也很明显，数组在向下滚动的时候，是往下补充元素，而向上滚动的时候，应该是向上补充元素。如 <code class="language-text">[1,2,3,4]</code> -> <code class="language-text">[0,1,2,3]</code>，对它的操作是 <code class="language-text">[1,2,3]</code> 保持不变，而 4 号元素变成了 0 号元素，所以我们需要根据不同的滚动方向来补充数组。</p>
+<p>先创建一个获取滚动方向的流 <code class="language-text">scrollDirection$</code></p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> scrollDirection$ <span class="token operator">=</span> scrollTop$<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+  <span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">scrollTop</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> dir <span class="token operator">=</span> scrollTop <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lastScrollPos<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>lastScrollPos <span class="token operator">=</span> scrollTop<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> dir <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>将 <code class="language-text">scrollDirection$</code> 流加入到 <code class="language-text">dataInViewSlice$</code> 的依赖中</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> dataInViewSlice$ <span class="token operator">=</span> <span class="token function">combineLatest</span><span class="token punctuation">(</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>data$<span class="token punctuation">,</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>options$<span class="token punctuation">,</span>
+  shouldUpdate$
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">withLatestFrom</span><span class="token punctuation">(</span>scrollDirection$<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>有了滚动方向，我们只需要修改 newIndex 就好了</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// 向下滚动时 [0,1,2,3] -> [1,2,3,4] = 3</span>
+<span class="token comment">// 向上滚动时 [1,2,3,4] -> [0,1,2,3] = 0</span>
+<span class="token keyword">let</span> newIndex <span class="token operator">=</span> dir <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> lastIndex <span class="token operator">-</span> diffSliceIndexes<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">:</span> firstIndex<span class="token punctuation">;</span></code></pre></div>
+<p>至此，一个功能完善的按需更新的虚拟列表就基本完成了，效果如下</p>
+<p><img src="/f899a132db301d1c7a1a65aa80222fb5/v3.2.gif" alt="v3.2"></p>
+<p>是不是还差了什么？</p>
+<p>没错，我们还没有解决列表滚动到最后时会创建、删除 DOM 的问题了。</p>
+<p>分析一下问题原因，应该能想到是 <code class="language-text">shouldUpdate$</code> 这里在最后一屏的时候，计算出来的索引与最后一个索引的差小于了 <code class="language-text">actualRows$</code> 中计算出来的数，所以导致了列表数量的变化，知道了原因就好解决问题了。</p>
+<p>我们只需要计算出数组在维持真实 DOM 数量不变的情况下，最后一屏的起始索引应为多少，再和计算出来的视窗中第一个元素的索引进行对比，取二者最小为下一时刻的起始索引。</p>
+<p>计算最后一屏的索引时需要得知 data 的长度，所以先将 data 依赖拉进来</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> shouldUpdate$ <span class="token operator">=</span> <span class="token function">combineLatest</span><span class="token punctuation">(</span>
+  scrollWin$<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> virtualListElm<span class="token punctuation">.</span>scrollTop<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>data$<span class="token punctuation">,</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>options$<span class="token punctuation">,</span>
+  actualRows$
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>然后来计算索引</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// 计算当前列表中最顶部的索引</span>
+<span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>st<span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token punctuation">{</span> height <span class="token punctuation">}</span><span class="token punctuation">,</span> actualRows<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> firstIndex <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>st <span class="token operator">/</span> height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 在维持 DOM 数量不变的情况下计算出的索引</span>
+  <span class="token keyword">const</span> maxIndex <span class="token operator">=</span> data<span class="token punctuation">.</span>length <span class="token operator">-</span> actualRows <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> data<span class="token punctuation">.</span>length <span class="token operator">-</span> actualRows<span class="token punctuation">;</span>
+  <span class="token comment">// 取二者最小作为起始索引</span>
+  <span class="token keyword">return</span> <span class="token punctuation">[</span>Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>maxIndex<span class="token punctuation">,</span> firstIndex<span class="token punctuation">)</span><span class="token punctuation">,</span> actualRows<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>这样就真正完成了完全复用 DOM + 按需更新 DOM 的虚拟列表组件。</p>
+<hr>
+<p>Github</p>
+<p><a href="https://github.com/musicq/vist">https://github.com/musicq/vist</a></p>
+<p>上述代码具体请看在线 DEMO</p>
+<p><a href="https://stackblitz.com/edit/react-ts-virtuallist">Online Demo</a>。</p></section><hr style="margin-bottom:1.75rem"/><footer><div style="display:flex;margin-bottom:4.375rem"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;margin-right:0.875rem;margin-bottom:0;min-width:50px;border-radius:100%"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIDBAH/xAAWAQEBAQAAAAAAAAAAAAAAAAABAgD/2gAMAwEAAhADEAAAAbo3RTWIKOFbSJ3/xAAZEAEAAwEBAAAAAAAAAAAAAAACAAEDEhD/2gAIAQEAAQUC17VkMXE+dFrXjFKHI1c//8QAFREBAQAAAAAAAAAAAAAAAAAAICL/2gAIAQMBAT8Bkf/EABcRAQADAAAAAAAAAAAAAAAAABABIjH/2gAIAQIBAT8BsRh//8QAGRAAAgMBAAAAAAAAAAAAAAAAASEAEBEi/9oACAEBAAY/AsAUVYQjOWac2v/EABwQAAICAwEBAAAAAAAAAAAAAAABESExQVFhEP/aAAgBAQABPyGtkPckgeOmlswI2ECLrhCwOfHBbs4u/n//2gAMAwEAAgADAAAAECP4ff/EABcRAQEBAQAAAAAAAAAAAAAAAAEQMRH/2gAIAQMBAT8QDTsQ6T//xAAYEQEBAAMAAAAAAAAAAAAAAAABEBEhMf/aAAgBAgEBPxA0wcjRk//EAB4QAQADAQABBQAAAAAAAAAAAAEAESExQVFhgZGh/9oACAEBAAE/EG7tOcm6+c57yk8JpM+r2DaZg2ux8cij+tQAYKBEC4EAhYeIGLCBHDDktQCy/WJbP//Z" alt="Liang Kui" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/static/815f576f2ff5634b4cf2f8980f53db52/99438/avatar.jpg 1x,
+/static/815f576f2ff5634b4cf2f8980f53db52/aba1d/avatar.jpg 1.5x,
+/static/815f576f2ff5634b4cf2f8980f53db52/b315d/avatar.jpg 2x" /><img loading="lazy" width="50" height="50" srcset="/static/815f576f2ff5634b4cf2f8980f53db52/99438/avatar.jpg 1x,
+/static/815f576f2ff5634b4cf2f8980f53db52/aba1d/avatar.jpg 1.5x,
+/static/815f576f2ff5634b4cf2f8980f53db52/b315d/avatar.jpg 2x" src="/static/815f576f2ff5634b4cf2f8980f53db52/99438/avatar.jpg" alt="Liang Kui" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><p>I am <a href="https://twitter.com/musicqpee" target="_blank" rel="noopener noreferrer">Liang Kui</a>.<br/>Let&#x27;s make the life getting better.</p></div></footer></article><nav><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/angular-change-strategy/">← <!-- -->Angular 变更检测</a></li><li></li></ul></nav></main><footer style="margin-top:5.25rem"><a href="https://github.com/musicq" target="_blank" rel="noopener noreferrer">Github</a> • <a href="https://twitter.com/musicqpee" target="_blank" rel="noopener noreferrer">Twitter</a></footer></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/build-virtual-list-with-react-and-rxjs/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-aa999d41fe05c1bf97e5.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-cf2fd0f92da7499f18b1.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-60573f36912359d44b74.js"],"component---src-pages-404-js":["/component---src-pages-404-js-fcb4b4695795138915cd.js"],"component---src-pages-index-js":["/component---src-pages-index-js-365621649a48e1829aea.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-js-60573f36912359d44b74.js" async=""></script><script src="/commons-79c668329b01e3c4050d.js" async=""></script><script src="/app-aa999d41fe05c1bf97e5.js" async=""></script><script src="/styles-fb3a0e2694e1dc7ecada.js" async=""></script><script src="/webpack-runtime-4035270588836453bf5c.js" async=""></script></body></html>
