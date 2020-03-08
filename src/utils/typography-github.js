@@ -15,13 +15,11 @@ const theme = {
   blockMarginBottom: 1 / 2,
   overrideStyles: ({ rhythm }) => ({
     h1: {
-      borderBottom: `1px solid ${gray(93)}`,
       paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
       marginBottom: rhythm(3 / 4),
       marginTop: rhythm(1.5),
     },
     h2: {
-      borderBottom: `1px solid ${gray(93)}`,
       paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
       marginBottom: rhythm(1 / 4),
       marginTop: rhythm(1),
