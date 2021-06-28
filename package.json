@@ -38,6 +38,7 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@musicq/just-prettier-config": "^1.0.0",
     "gh-pages": "^2.2.0",
     "prettier": "^1.19.1"
   },
