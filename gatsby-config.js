@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `MusicQ`,
     author: `Liang Kui`,
-    description: `Let's make the life getting better.`,
+    description: ``,
     siteUrl: `https://musicq.cc`,
     social: {
       twitter: `musicqpee`,

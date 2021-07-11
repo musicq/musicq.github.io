@@ -13,7 +13,7 @@ const theme = {
   boldWeight: 600,
   // Github has all block elements use 1/2 rhythm not a full rhythm.
   blockMarginBottom: 1 / 2,
-  overrideStyles: ({ rhythm }) => ({
+  overrideStyles: ({rhythm}) => ({
     h1: {
       paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
       marginBottom: rhythm(3 / 4),
@@ -53,6 +53,9 @@ const theme = {
       marginLeft: 0,
       paddingLeft: `calc(${rhythm(1 / 2)} - 1px)`,
     },
+    pre: {
+      fontSize: `${rhythm(1 / 2)} !important`
+    }
   }),
 };
 
