@@ -146,3 +146,7 @@ In this way, we don't need to generate extra `.mjs` files. But need to make sure
 # Conclusion
 
 I think it's a better idea to **always define `"type": "module"` inside a library package.json**. This won't break how Node interprets CJS, and enable us to ship ESM first-class support libraries while also have the capability to compat with CJS applications.
+
+> playground can check this repo out
+>
+> https://github.com/musicq/node-esm-vs-cjs
