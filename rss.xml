@@ -1,4 +1,106 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MusicQ]]></title><description><![CDATA[MusicQ]]></description><link>https://musicq.cc</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 11 Jul 2021 09:51:01 GMT</lastBuildDate><item><title><![CDATA[Event loop 的执行顺序]]></title><description><![CDATA[…]]></description><link>https://musicq.cc/event-loop-execute-order/</link><guid isPermaLink="false">https://musicq.cc/event-loop-execute-order/</guid><pubDate>Mon, 28 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;很多文章都在讲事件循环，但是大部分只停留在概念上，真正遇到考题可能就晕了。这篇文章就是想从实战角度，体验一下什么是事件循环。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[MusicQ]]></title><description><![CDATA[MusicQ]]></description><link>https://musicq.cc</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 14 Mar 2023 10:06:50 GMT</lastBuildDate><item><title><![CDATA[Node ESM vs CJS]]></title><description><![CDATA[Node uses CJS mode to load modules by default, it treats all the files that with an extension   as commonjs modules. But you can switch to…]]></description><link>https://musicq.cc/node-esm-vs-cjs/</link><guid isPermaLink="false">https://musicq.cc/node-esm-vs-cjs/</guid><pubDate>Tue, 14 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Node uses CJS mode to load modules by default, it treats all the files that with an extension &lt;code class=&quot;language-text&quot;&gt;.js&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;.cjs&lt;/code&gt; as commonjs modules. But you can switch to ESM through 2 ways.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Change the file extension to &lt;code class=&quot;language-text&quot;&gt;.mjs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code class=&quot;language-text&quot;&gt;&quot;type&quot;: &quot;module&quot;&lt;/code&gt; in the package.json&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Both ways can let Node to interpret modules as ESM, the difference is only that if you add &lt;code class=&quot;language-text&quot;&gt;&quot;type&quot;: &quot;module&quot;&lt;/code&gt; inside the package.json, Node will interpret all &lt;code class=&quot;language-text&quot;&gt;.js&lt;/code&gt; files that belong to this package by using ESM mode.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ignore &lt;code class=&quot;language-text&quot;&gt;&quot;type&quot;&lt;/code&gt; or set &lt;code class=&quot;language-text&quot;&gt;&quot;type&quot;: &quot;commonjs&quot;&lt;/code&gt; will let Node to use CJS mode.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Which mode to use determines that how Node resolve dependencies. For example, we have a &lt;code class=&quot;language-text&quot;&gt;my-pkg&lt;/code&gt; package as one of our app’s dependencies. It structure looks like below&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;tree node_modules/my-pkg
+&lt;span class=&quot;token comment&quot;&gt;# my-pkg/&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# ├── dist/&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# │   ├── index.cjs&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# │   ├── index.d.ts&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# │   ├── index.js&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# │   └── index.mjs&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# └── package.json&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; package.json
+&lt;span class=&quot;token comment&quot;&gt;# {&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#   &quot;name&quot;: &quot;my-pkg&quot;,&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#   &quot;version&quot;: &quot;1.0.0&quot;,&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#   &quot;exports&quot;: {&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#     &quot;.&quot;: {&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#       &quot;import&quot;: &quot;./dist/index.mjs&quot;,&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#       &quot;require&quot;: &quot;./dist/index.cjs&quot;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#     }&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#   }&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# }&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; dist/index.cjs
+&lt;span class=&quot;token comment&quot;&gt;# exports.msg = &apos;my-pkg - cjs&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; dist/index.mjs
+&lt;span class=&quot;token comment&quot;&gt;# export const msg = &apos;my-pkg - esm&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In our app, the structure looks like&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;tree &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# app/&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# ├── src/&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# │   ├── index.cjs&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# │   ├── index.js&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# │   └── index.mjs&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# ├── node_modules&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# │   └── my-pkg&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# └── package.json&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; package.json
+&lt;span class=&quot;token comment&quot;&gt;# {&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#   &quot;name&quot;: &quot;ts-esm&quot;,&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#   &quot;dependencies&quot;: {&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#     &quot;my-pkg&quot;: &quot;1.0.0&quot;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#   }&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# }&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; src/index.mjs
+&lt;span class=&quot;token comment&quot;&gt;# import {msg} from &apos;my-pkg&apos;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# console.log(msg)&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; src/index.cjs
+&lt;span class=&quot;token comment&quot;&gt;# const {msg} = require(&apos;my-pkg&apos;)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# console.log(msg)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notice that there is a &lt;code class=&quot;language-text&quot;&gt;exports&lt;/code&gt; object in &lt;code class=&quot;language-text&quot;&gt;my-pkg&lt;/code&gt; package.json, this is called &lt;a href=&quot;https://nodejs.org/dist/latest-v18.x/docs/api/packages.html#conditional-exports&quot;&gt;condition exports&lt;/a&gt;. In ESM mode, it will resolve &lt;code class=&quot;language-text&quot;&gt;exports.import&lt;/code&gt;, in CJS mode, it will resolve &lt;code class=&quot;language-text&quot;&gt;exports.require&lt;/code&gt;. This will enable us to create a library that satisfy both CJS and ESM users.&lt;/p&gt;
+&lt;p&gt;If we run the command&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;node src/index.mjs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Node will interpret this file by using ESM mode, so it will &lt;strong&gt;import&lt;/strong&gt; the &lt;code class=&quot;language-text&quot;&gt;my-pkg/dist/index.mjs&lt;/code&gt;, then prints &lt;code class=&quot;language-text&quot;&gt;my-pkg - esm&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If we run the command&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;node src/index.cjs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It will &lt;strong&gt;require&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;my-pkg/dist/index.cjs&lt;/code&gt;, then prints &lt;code class=&quot;language-text&quot;&gt;my-pkg - cjs&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Cross Import&lt;/h2&gt;
+&lt;p&gt;It’s quite common to import some CJS dependencies within a ESM file, Node can do this by default.&lt;/p&gt;
+&lt;p&gt;Let’s change the package.json of &lt;code class=&quot;language-text&quot;&gt;my-pkg&lt;/code&gt; a bit, to refer ESM to a CJS file in condition exports.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;my-pkg&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;exports&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;import&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./dist/index.cjs&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./dist/index.cjs&quot;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then run the command&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;node src/index.mjs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It works well and prints &lt;code class=&quot;language-text&quot;&gt;my-pkg - cjs&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;You cannot require a ESM module within a CJS file.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;ESM by Default&lt;/h2&gt;
+&lt;p&gt;Usually, we will use some bundler to bundle our codebase, and generate &lt;code class=&quot;language-text&quot;&gt;.js&lt;/code&gt; files instead of &lt;code class=&quot;language-text&quot;&gt;.mjs&lt;/code&gt; files. So what if we want  Node to interpret &lt;code class=&quot;language-text&quot;&gt;.js&lt;/code&gt; files as ESM automatically?&lt;/p&gt;
+&lt;p&gt;To do so, we can define the &lt;code class=&quot;language-text&quot;&gt;&quot;type&quot;: &quot;module&quot;&lt;/code&gt; in the library package.json like below&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;my-pkg&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;exports&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;import&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./dist/index.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./dist/index.cjs&quot;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this way, we don’t need to generate extra &lt;code class=&quot;language-text&quot;&gt;.mjs&lt;/code&gt; files. But need to make sure that your &lt;code class=&quot;language-text&quot;&gt;.js&lt;/code&gt; files are using ESM mode.&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;I think it’s a better idea to &lt;strong&gt;always define &lt;code class=&quot;language-text&quot;&gt;&quot;type&quot;: &quot;module&quot;&lt;/code&gt; inside a library package.json&lt;/strong&gt;. This won’t break how Node interprets CJS, and enable us to ship ESM first-class support libraries while also have the capability to compat with CJS applications.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Event loop 的执行顺序]]></title><description><![CDATA[…]]></description><link>https://musicq.cc/event-loop-execute-order/</link><guid isPermaLink="false">https://musicq.cc/event-loop-execute-order/</guid><pubDate>Mon, 28 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;很多文章都在讲事件循环，但是大部分只停留在概念上，真正遇到考题可能就晕了。这篇文章就是想从实战角度，体验一下什么是事件循环。&lt;/p&gt;
 &lt;p&gt;下面是一道很常见的面试题，我将它稍微改造变成了一个很复杂异步代码例子，你能看出他的运行结果吗？&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;a1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;a1 start&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
