@@ -1,7 +1,8 @@
 ---
 title: How to handle errors gracefully?
-date: "2020-01-21"
-description: "Have you ever annoyed by the errors everywhere?"
+date: '2020-01-21'
+description: 'Have you ever annoyed by the errors everywhere?'
+archive: true
 ---
 
 When I write an app, I usually separate HTTP requests into some independent files. Then I want to use them as simple as can be in my business code which usually are components. Like the example below.
@@ -9,7 +10,7 @@ When I write an app, I usually separate HTTP requests into some independent file
 ```js
 // service.js
 export function getPosts() {
-  return fetch("/api/posts/")
+  return fetch('/api/posts/')
     .then(res => res.json())
     .catch(e => {
       logger.error(e)
@@ -20,8 +21,8 @@ export function getPosts() {
 // component.js
 function fetchPosts() {
   getPosts()
-    .then(posts => this.setState({ posts, error: null }))
-    .catch(e => this.setState({ posts: [], error: e }))
+    .then(posts => this.setState({posts, error: null}))
+    .catch(e => this.setState({posts: [], error: e}))
 }
 ```
 
@@ -33,7 +34,7 @@ We can solve that by tweaking the service.js file a little bit.
 export function getPosts() {
   const defaultValue = []
 
-  return fetch("/api/posts/")
+  return fetch('/api/posts/')
     .then(res => res.json() || defaultValue)
     .catch(e => {
       logger.error(e)
@@ -61,7 +62,7 @@ If we encapsulate all errors into an Err type, then we can handle it as a normal
 // service.js
 export function getPosts() {
   return (
-    fetch("/api/posts/")
+    fetch('/api/posts/')
       .then(res => res.json())
       // Transform errors to Err type
       .catch(e => new Err(e.message, e))

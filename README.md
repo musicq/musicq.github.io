@@ -1,5 +1,3 @@
-# Musicq
+# Musicq's Blog
 
-Welcome to my blog.
-
-https://musicq.cc
+https://blog.liangkui.me

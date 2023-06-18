@@ -1,7 +1,7 @@
 ---
 title: 使用 React + Rxjs 实现一个虚拟滚动组件
-date: "2019-01-11"
-description: "你遇到过在渲染长列表时卡顿的现象吗？"
+date: '2019-01-11'
+description: '你遇到过在渲染长列表时卡顿的现象吗？'
 ---
 
 # 为什么使用虚拟列表
@@ -34,12 +34,12 @@ https://github.com/musicq/vist
 
 ```typescript
 interface IVirtualListOptions {
-  height: number;
+  height: number
 }
 
 interface IVirtualListProps {
-  data$: Observable<string[]>;
-  options$: Observable<IVirtualListOptions>;
+  data$: Observable<string[]>
+  options$: Observable<IVirtualListOptions>
 }
 ```
 
@@ -52,7 +52,7 @@ interface IVirtualListProps {
 需要在组件 mount 之后，才能测量容器的真实高度。可以通过一个 ref 来绑定容器元素，在 `componentDidMount` 之后，获取容器高度，并通知 `containerHeight$`。
 
 ```typescript
-this.containerHeight$.next(virtualListContainerElm.clientHeight);
+this.containerHeight$.next(virtualListContainerElm.clientHeight)
 ```
 
 获取了容器高度之后，根据上面的公式来计算视窗内应该显示的 DOM 数量
@@ -60,22 +60,22 @@ this.containerHeight$.next(virtualListContainerElm.clientHeight);
 ```typescript
 const actualRows$ = combineLatest(
   this.containerHeight$,
-  this.props.options$
-).pipe(map(([ch, { height }]) => Math.ceil(ch / height)));
+  this.props.options$,
+).pipe(map(([ch, {height}]) => Math.ceil(ch / height)))
 ```
 
 通过组合 `actualRows$` 和 `data$` 两个流，来获取到应当出现在视窗内的数据切片
 
 ```typescript
 const dataInViewSlice$ = combineLatest(this.props.data$, actualRows$).pipe(
-  map(([data, actualRows]) => data.slice(0, actualRows))
-);
+  map(([data, actualRows]) => data.slice(0, actualRows)),
+)
 ```
 
 这样，一个当前时刻的数据源就获取到了，订阅它来将列表渲染出来
 
 ```typescript
-dataInViewSlice$.subscribe(data => this.setState({ data }));
+dataInViewSlice$.subscribe(data => this.setState({data}))
 ```
 
 **效果**
@@ -100,8 +100,8 @@ dataInViewSlice$.subscribe(data => this.setState({ data }));
 
 ```typescript
 const scrollHeight$ = combineLatest(this.props.data$, this.props.options$).pipe(
-  map(([data, { height }]) => data.length * height)
-);
+  map(([data, {height}]) => data.length * height),
+)
 ```
 
 **效果**
@@ -125,16 +125,16 @@ const scrollHeight$ = combineLatest(this.props.data$, this.props.options$).pipe(
 ```typescript
 const actualRows$ = combineLatest(
   this.containerHeight$,
-  this.props.options$
-).pipe(map(([ch, { height }]) => Math.ceil(ch / height) + 3));
+  this.props.options$,
+).pipe(map(([ch, {height}]) => Math.ceil(ch / height) + 3))
 ```
 
 首先定义一个视窗滚动事件流
 
 ```typescript
-const scrollWin$ = fromEvent(virtualListElm, "scroll").pipe(
-  startWith({ target: { scrollTop: 0 } })
-);
+const scrollWin$ = fromEvent(virtualListElm, 'scroll').pipe(
+  startWith({target: {scrollTop: 0}}),
+)
 ```
 
 在每次滚动的时候去计算当前状态的索引
@@ -143,15 +143,15 @@ const scrollWin$ = fromEvent(virtualListElm, "scroll").pipe(
 const shouldUpdate$ = combineLatest(
   scrollWin$.pipe(map(() => virtualListElm.scrollTop)),
   this.props.options$,
-  actualRows$
+  actualRows$,
 ).pipe(
   // 计算当前列表中最顶部的索引
-  map(([st, { height }, actualRows]) => {
-    const firstIndex = Math.floor(st / height);
-    const lastIndex = firstIndex + actualRows - 1;
-    return [firstIndex, lastIndex];
-  })
-);
+  map(([st, {height}, actualRows]) => {
+    const firstIndex = Math.floor(st / height)
+    const lastIndex = firstIndex + actualRows - 1
+    return [firstIndex, lastIndex]
+  }),
+)
 ```
 
 这样就能在每一次滚动的时候得到视窗内数据的起止索引了，接下来只需要根据索引算出 data 切片就好了。
@@ -159,9 +159,9 @@ const shouldUpdate$ = combineLatest(
 ```typescript
 const dataInViewSlice$ = combineLatest(this.props.data$, shouldUpdate$).pipe(
   map(([data, [firstIndex, lastIndex]]) =>
-    data.slice(firstIndex, lastIndex + 1)
-  )
-);
+    data.slice(firstIndex, lastIndex + 1),
+  ),
+)
 ```
 
 拿到了正确的数据，还没完，想象一下，虽然我们随着滚动的发生计算出了正确的数据切片，但是正确的数据却没有出现在正确的位置，因为他们的位置是固定不变的。
@@ -172,17 +172,17 @@ const dataInViewSlice$ = combineLatest(this.props.data$, shouldUpdate$).pipe(
 const dataInViewSlice$ = combineLatest(
   this.props.data$,
   this.props.options$,
-  shouldUpdate$
+  shouldUpdate$,
 ).pipe(
-  map(([data, { height }, [firstIndex, lastIndex]]) => {
+  map(([data, {height}, [firstIndex, lastIndex]]) => {
     return data.slice(firstIndex, lastIndex + 1).map(item => ({
       origin: item,
       // 用来定位元素的位置
       $pos: firstIndex * height,
-      $index: firstIndex++
-    }));
-  })
-);
+      $index: firstIndex++,
+    }))
+  }),
+)
 ```
 
 接下把 HTML 结构也做一下修改，将每一个元素的位移添加进去
@@ -192,15 +192,15 @@ this.state.data.map(data => (
   <div
     key={data.$index}
     style={{
-      position: "absolute",
-      width: "100%",
+      position: 'absolute',
+      width: '100%',
       // 定位每一个 item
-      transform: `translateY(${data.$pos}px)`
+      transform: `translateY(${data.$pos}px)`,
     }}
   >
     {(this.props.children as any)(data.origin)}
   </div>
-));
+))
 ```
 
 这样就完成了一个虚拟列表的基本形态和功能了。
@@ -224,19 +224,19 @@ this.state.data.map(data => (
 const shouldUpdate$ = combineLatest(
   scrollWin$.pipe(map(() => virtualListElm.scrollTop)),
   this.props.options$,
-  actualRows$
+  actualRows$,
 ).pipe(
   // 计算当前列表中最顶部的索引
-  map(([st, { height }, actualRows]) => [Math.floor(st / height), actualRows]),
+  map(([st, {height}, actualRows]) => [Math.floor(st / height), actualRows]),
   // 如果索引有改变，才触发重新 render
   filter(([curIndex]) => curIndex !== this.lastFirstIndex),
   // update the index
   tap(([curIndex]) => (this.lastFirstIndex = curIndex)),
   map(([firstIndex, actualRows]) => {
-    const lastIndex = firstIndex + actualRows - 1;
-    return [firstIndex, lastIndex];
-  })
-);
+    const lastIndex = firstIndex + actualRows - 1
+    return [firstIndex, lastIndex]
+  }),
+)
 ```
 
 **效果**
@@ -256,7 +256,7 @@ const shouldUpdate$ = combineLatest(
 为了达到节点的复用，我们需要将列表的 key 设置为数组索引，而非一个唯一的 id，如下
 
 ```typescript
-this.state.data.map((data, i) => <div key={i}>{data}</div>);
+this.state.data.map((data, i) => <div key={i}>{data}</div>)
 ```
 
 只需要这一点改动，再看看效果
@@ -295,7 +295,7 @@ this.state.data.map((data, i) => <div key={i}>{data}</div>);
 先来实现第一步，只需要稍微改动一下原先的 `dataInViewSlice$` 流的 map 实现即可完成初始数据的填充
 
 ```typescript
-const dataSlice = this.stateDataSnapshot;
+const dataSlice = this.stateDataSnapshot
 
 if (!dataSlice.length) {
   return (this.stateDataSnapshow = data
@@ -303,8 +303,8 @@ if (!dataSlice.length) {
     .map(item => ({
       origin: item,
       $pos: firstIndex * height,
-      $index: firstIndex++
-    })));
+      $index: firstIndex++,
+    })))
 }
 ```
 
@@ -317,8 +317,8 @@ if (!dataSlice.length) {
 const diffSliceIndexes = this.getDifferenceIndexes(
   dataSlice,
   firstIndex,
-  lastIndex
-);
+  lastIndex,
+)
 ```
 
 有了差集就可以计算新的数组组成了。还以此图为例，用户向下滚动，当元素被移除视野的时候，第一个元素（索引为 0）就变成最后一个元素（索引为 4），也就是，oldSlice `[0,1,2,3]` -> newSlice `[1,2,3,4]`。
@@ -329,16 +329,16 @@ const diffSliceIndexes = this.getDifferenceIndexes(
 
 ```typescript
 // 计算视窗的起始索引
-let newIndex = lastIndex - diffSliceIndexes.length + 1;
+let newIndex = lastIndex - diffSliceIndexes.length + 1
 
 diffSliceIndexes.forEach(index => {
-  const item = dataSlice[index];
-  item.origin = data[newIndex];
-  item.$pos = newIndex * height;
-  item.$index = newIndex++;
-});
+  const item = dataSlice[index]
+  item.origin = data[newIndex]
+  item.$pos = newIndex * height
+  item.$index = newIndex++
+})
 
-return (this.stateDataSnapshot = dataSlice);
+return (this.stateDataSnapshot = dataSlice)
 ```
 
 这样就完成了一个向下滚动的数组拼接，如下图所示，DOM 确实是只更新超出视野的元素，而没有重刷整个列表。
@@ -352,11 +352,11 @@ return (this.stateDataSnapshot = dataSlice);
 ```typescript
 const scrollDirection$ = scrollTop$.pipe(
   map(scrollTop => {
-    const dir = scrollTop - this.lastScrollPos;
-    this.lastScrollPos = scrollTop;
-    return dir > 0 ? 1 : -1;
-  })
-);
+    const dir = scrollTop - this.lastScrollPos
+    this.lastScrollPos = scrollTop
+    return dir > 0 ? 1 : -1
+  }),
+)
 ```
 
 将 `scrollDirection$` 流加入到 `dataInViewSlice$` 的依赖中
@@ -365,8 +365,8 @@ const scrollDirection$ = scrollTop$.pipe(
 const dataInViewSlice$ = combineLatest(
   this.props.data$,
   this.options$,
-  shouldUpdate$
-).pipe(withLatestFrom(scrollDirection$));
+  shouldUpdate$,
+).pipe(withLatestFrom(scrollDirection$))
 ```
 
 有了滚动方向，我们只需要修改 newIndex 就好了
@@ -374,7 +374,7 @@ const dataInViewSlice$ = combineLatest(
 ```typescript
 // 向下滚动时 [0,1,2,3] -> [1,2,3,4] = 3
 // 向上滚动时 [1,2,3,4] -> [0,1,2,3] = 0
-let newIndex = dir > 0 ? lastIndex - diffSliceIndexes.length + 1 : firstIndex;
+let newIndex = dir > 0 ? lastIndex - diffSliceIndexes.length + 1 : firstIndex
 ```
 
 至此，一个功能完善的按需更新的虚拟列表就基本完成了，效果如下
@@ -396,21 +396,21 @@ const shouldUpdate$ = combineLatest(
   scrollWin$.pipe(map(() => virtualListElm.scrollTop)),
   this.props.data$,
   this.props.options$,
-  actualRows$
-);
+  actualRows$,
+)
 ```
 
 然后来计算索引
 
 ```typescript
 // 计算当前列表中最顶部的索引
-map(([st, data, { height }, actualRows]) => {
-  const firstIndex = Math.floor(st / height);
+map(([st, data, {height}, actualRows]) => {
+  const firstIndex = Math.floor(st / height)
   // 在维持 DOM 数量不变的情况下计算出的索引
-  const maxIndex = data.length - actualRows < 0 ? 0 : data.length - actualRows;
+  const maxIndex = data.length - actualRows < 0 ? 0 : data.length - actualRows
   // 取二者最小作为起始索引
-  return [Math.min(maxIndex, firstIndex), actualRows];
-});
+  return [Math.min(maxIndex, firstIndex), actualRows]
+})
 ```
 
 这样就真正完成了完全复用 DOM + 按需更新 DOM 的虚拟列表组件。

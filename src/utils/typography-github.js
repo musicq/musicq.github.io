@@ -1,11 +1,39 @@
-import gray from './gray-percentage';
+import gray from './gray-percentage'
 
 const theme = {
   title: 'GitHub',
   baseFontSize: '16px',
   baseLineHeight: 1.625,
-  headerFontFamily: ['IBM Plex Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
-  bodyFontFamily: ['IBM Plex Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+  headerFontFamily: [
+    'IBM Plex Sans',
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Segoe UI',
+    'Roboto',
+    'Helvetica Neue',
+    'Arial',
+    'Noto Sans',
+    'sans-serif',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji',
+  ],
+  bodyFontFamily: [
+    'IBM Plex Sans',
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Segoe UI',
+    'Roboto',
+    'Helvetica Neue',
+    'Arial',
+    'Noto Sans',
+    'sans-serif',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji',
+  ],
   scaleRatio: 2,
   bodyColor: 'hsla(0,0%,0%,0.8)',
   headerWeight: 600,
@@ -54,9 +82,9 @@ const theme = {
       paddingLeft: `calc(${rhythm(1 / 2)} - 1px)`,
     },
     pre: {
-      fontSize: `${rhythm(1 / 2)} !important`
-    }
+      fontSize: `${rhythm(1 / 2)} !important`,
+    },
   }),
-};
+}
 
-export default theme;
+export default theme

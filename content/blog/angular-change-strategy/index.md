@@ -1,7 +1,7 @@
 ---
 title: Angular 变更检测
-date: "2018-02-24T22:12:03.284Z"
-description: "Angular 到底是如何进行变更检测的？"
+date: '2018-02-24T22:12:03.284Z'
+description: 'Angular 到底是如何进行变更检测的？'
 ---
 
 ## Angular1 vs Angular 变更检测
@@ -55,17 +55,17 @@ class MyApp extends React.Component {
 @Component({
   selector: 'my-app',
   template: `
-  <h1>{{name}}</h1>
-  <button (click)="click()">Change Name</button>
-  `
+    <h1>{{ name }}</h1>
+    <button (click)="click()">Change Name</button>
+  `,
 })
 export class MyAppComponent {
-  name: 'angular';
+  name: 'angular'
 
   constructor() {}
 
   click() {
-    this.name = 'react';
+    this.name = 'react'
   }
 }
 ```
@@ -82,7 +82,7 @@ class MyAppComponent_ChangeDetector {
 
   detectChanges(name: string) {
     if (name !== this.previousName) {
-      this.previousName = name;
+      this.previousName = name
     }
   }
 }
@@ -95,8 +95,8 @@ class MyAppComponent_ChangeDetector {
 _app.component.ts_
 
 ```typescript
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { Actor } from './actor.model';
+import {Component, ChangeDetectionStrategy} from '@angular/core'
+import {Actor} from './actor.model'
 
 export class Actor {
   constructor(public firstName: string, public lastName: string) {}
@@ -113,20 +113,21 @@ export class Actor {
     <button type="button" (click)="changeActorObject()">
       Change Actor Object
     </button>
-    <app-movie [title]="title" [actor]="actor"></app-movie>`
+    <app-movie [title]="title" [actor]="actor"></app-movie>
+  `,
 })
 export class AppComponent {
-  slogan = 'Just movie information';
-  title = 'Terminator 1';
-  actor = new Actor('Arnold', 'Schwarzenegger');
+  slogan = 'Just movie information'
+  title = 'Terminator 1'
+  actor = new Actor('Arnold', 'Schwarzenegger')
 
   changeActorProperties(): void {
-    this.actor.firstName = 'Nicholas';
-    this.actor.lastName = 'Cage';
+    this.actor.firstName = 'Nicholas'
+    this.actor.lastName = 'Cage'
   }
 
   changeActorObject(): void {
-    this.actor = new Actor('Bruce', 'Willis');
+    this.actor = new Actor('Bruce', 'Willis')
   }
 }
 ```
@@ -134,9 +135,9 @@ export class AppComponent {
 _movie.component.ts_
 
 ```typescript
-import { Component, Input } from '@angular/core';
-import { ChangeDetectionStrategy } from '@angular/core';
-import { Actor } from './actor.model';
+import {Component, Input} from '@angular/core'
+import {ChangeDetectionStrategy} from '@angular/core'
+import {Actor} from './actor.model'
 
 @Component({
   selector: 'app-movie',
@@ -146,13 +147,14 @@ import { Actor } from './actor.model';
       <h3>{{ title }}</h3>
       <p>
         <label>Actor:</label>
-        <span>{{actor.firstName}} {{actor.lastName}}</span>
+        <span>{{ actor.firstName }} {{ actor.lastName }}</span>
       </p>
-    </div>`
+    </div>
+  `,
 })
 export class MovieComponent {
-  @Input() title: string;
-  @Input() actor: Actor;
+  @Input() title: string
+  @Input() actor: Actor
 }
 ```
 
@@ -164,21 +166,21 @@ class AppComponent_ChangeDetector {
     public previousSlogan: string,
     public previousTitle: string,
     public previousActor: Actor,
-    public movieComponent: MovieComponent
+    public movieComponent: MovieComponent,
   ) {}
 
   detectChanges(slogan: string, title: string, actor: Actor) {
     if (slogan !== this.previousSlogan) {
-      this.previousSlogan = slogan;
-      this.movieComponent.slogan = slogan;
+      this.previousSlogan = slogan
+      this.movieComponent.slogan = slogan
     }
     if (title !== this.previousTitle) {
-      this.previousTitle = title;
-      this.movieComponent.title = title;
+      this.previousTitle = title
+      this.movieComponent.title = title
     }
     if (actor !== this.previousActor) {
-      this.previousActor = actor;
-      this.movieComponent.actor = actor;
+      this.previousActor = actor
+      this.movieComponent.actor = actor
     }
   }
 }
@@ -213,7 +215,7 @@ class AppComponent_ChangeDetector {
 ```typescript
 @Component({
   // ...
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieComponent {
   // ...

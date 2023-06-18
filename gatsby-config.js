@@ -2,10 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `MusicQ`,
     author: `Liang Kui`,
-    description: ``,
-    siteUrl: `https://musicq.cc`,
+    description: `Liang Kui's Blog`,
+    siteUrl: `https://blog.liangkui.me`,
     social: {
-      twitter: `musicqpee`,
+      twitter: `klsg92`,
     },
   },
   plugins: [
@@ -78,4 +78,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
   ],
-};
+}

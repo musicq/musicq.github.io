@@ -1,7 +1,7 @@
 ---
 title: Node ESM vs CJS
-date: "2023-03-14"
-description: "How do you define a modern NPM package?"
+date: '2023-03-14'
+description: 'How do you define a modern NPM package?'
 ---
 
 Node uses CJS mode to load modules by default, it treats all the files that with an extension `.js` `.cjs` as commonjs modules. But you can switch to ESM through 2 ways.
@@ -46,7 +46,7 @@ cat dist/index.mjs
 
 In our app, the structure looks like
 
-``` shell
+```shell
 tree .
 # app/
 # ├── src/
@@ -123,7 +123,7 @@ It works well and prints `my-pkg - cjs`.
 
 ## ESM by Default
 
-Usually, we will use some bundler to bundle our codebase, and generate `.js` files instead of `.mjs` files. So what if we want  Node to interpret `.js` files as ESM automatically?
+Usually, we will use some bundler to bundle our codebase, and generate `.js` files instead of `.mjs` files. So what if we want Node to interpret `.js` files as ESM automatically?
 
 To do so, we can define the `"type": "module"` in the library package.json like below
 

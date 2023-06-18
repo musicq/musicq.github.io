@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import {Link} from 'gatsby'
+import React from 'react'
 
-import { rhythm, scale } from '../utils/typography';
+import {rhythm, scale} from '../utils/typography'
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`;
-  let header;
+const Layout = ({location, title, children}) => {
+  const rootPath = `${__PATH_PREFIX__}/`
+  let header
 
   if (location.pathname === rootPath) {
     header = (
@@ -27,7 +27,7 @@ const Layout = ({ location, title, children }) => {
           {title}
         </Link>
       </h1>
-    );
+    )
   } else {
     header = (
       <h3
@@ -47,7 +47,7 @@ const Layout = ({ location, title, children }) => {
           {title}
         </Link>
       </h3>
-    );
+    )
   }
   return (
     <div
@@ -60,13 +60,25 @@ const Layout = ({ location, title, children }) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <footer style={{ marginTop: rhythm(3) }}>
-        <a href="https://github.com/musicq" target="_blank" rel="noopener noreferrer">Github</a>
+      <footer style={{marginTop: rhythm(3)}}>
+        <a
+          href="https://github.com/musicq"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </a>
         &nbsp;•&nbsp;
-        <a href="https://twitter.com/musicqpee" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a
+          href="https://twitter.com/klsg92"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Twitter
+        </a>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
