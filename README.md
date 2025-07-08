@@ -1,3 +1,3 @@
 # Musicq's Blog
 
-https://blog.liangkui.me
+https://musicq.github.io/
